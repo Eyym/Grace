@@ -1,0 +1,9 @@
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201601', 'Gracey', '男', '2019-6-27', '北京');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201602', '曹正淳', '男', '2019-6-27', '上海');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201603', '萨姆一', '女', '2019-6-27', '海南');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201604', '李白', '男', '2019-6-27', '长安');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201605', '李清照', '女', '2019-6-27', '永安');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201606', '朱莉', '女', '2019-6-27', '合肥');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201607', '武松', '女', '2019-6-27', '武当');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201608', '武松', '男', '2019-6-27', '武当');
+INSERT INTO `students` (`SID`, `SNAME`, `GENDER`, `BIRTHDAY`, `ADDRESS`) VALUES ('201609', 'qwe', '男', '2019-6-14', '埃及');

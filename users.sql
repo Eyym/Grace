@@ -1,0 +1,1 @@
+INSERT INTO `users` (`UID`, `USERNAME`, `PASSWORD`) VALUES (1, '张三', '123456');
