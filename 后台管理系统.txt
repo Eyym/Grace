@@ -1,0 +1,104 @@
+利用hibernate+struts2 框架完成后台项目
+
+准备环境：
+    Struts2.5 + hibernate4.2.4 + MySQL6.0
+
+ 功能：
+1    登录注册
+2  信息的增删改查
+
+ 做法：
+1 . 准备jar包 
+     hibernate-core包
+     struts2-core包
+     mysql驱动包 
+     junit单元测试包
+
+2 创建动态web项目 
+
+3 导包 
+    通过Window 属性下的java path添加相关包
+    new 包后 add libraries 将包添加
+    在WEB-INF目录下的lib中也导入相应的包
+
+4.配置相关的xml文件
+   web.xml文件   配置过滤器
+   strusts.xml文件 package为默认 （再添加<global-allowed-methods>regex:.*</global-allowed-methods>）
+   hibernate.xml文件 配置property属性
+
+5. 创建实体类User和Students
+    User（uid， username， password）
+    Students（sid，sname，gender，birthday，address）
+    将属性封装，保留不带参数的构造方法，生成一个带参数的构造方法
+    注意，实体类Students中需要重写toString方法 
+
+6.将实体类的属性映射到数据库中
+   在实体类的包下新建对应的hbm.xml文件
+   再配置hbm.xml的属性 
+   hibernate.cfg.xml中的mapping需要指定到两个实体类的xml中
+
+7.用户登录模块
+  创建MyHibernateSessionFactory
+     私有的构造方法，保证单例模式
+     公有的静态方法来获得工厂对象
+
+
+  设计用户接口和实现类
+      用户接口：用户登录方法，用户注销方法      
+      用户实现类：重写接口中的方法（try-catch-finally）       
+      用@test 来测试用户的功能（junit）
+
+  设计Action父类
+      继承ActionSupport 并且实现接口ServletRequestAware, ServletResponseAware, ServletContextAware
+      可以用web的内置对象
+      
+  设计用户的Action类（继承Action父类）
+       在接受表单模型数据采用模型驱动接受表单数据(可以不用get，set封装)
+       注册Struts2.xml
+
+
+  页面的调用
+       进去对应的jsp页面
+       表单的提交的action用绝对路径
+       action="<%=path%>/users/Users_login.action"这要和功能的名字相同（UserAction下的login方法）
+       用户登录验证用validate方法 但是会对所有的action都验证 可以通过在方法前加@SkiValidation来避免验证
+
+8.学生管理模块
+  
+       设计学生业务逻辑接口（查询所有学生资料，按id查询，添加学生资料，删除学生资料，修改学生资料）
+
+   显示学生资料
+        添加测试数据-->@test
+        设计学生业务逻辑接口（上面）
+        设计学生接口实现类（接口方法）（try - catch - finally）
+        设计学生Action动作（显示学生资料）
+        注册Struts2.xml
+        页面调用
+
+   删除学生资料
+        设计学生业务逻辑接口（上面）
+        设计学生接口实现类（接口方法）（try - catch - finally）
+        设计学生Action动作（删除学生资料）
+        注册Struts2.xml
+        页面调用
+
+   学生主键的生成策略
+        设计学生实现类（生成主键策略）
+        找到数据库最大的id 通过String转int 给id递增
+        再将int转为String
+        设计Action动作
+        
+   添加学生资料
+        添加测试数据-->@test
+        设计学生业务逻辑接口（上面）
+        设计学生接口实现类（接口方法）（try - catch - finally）
+        设计学生Action动作（显示学生资料）
+        注册Struts2.xml
+        页面调用
+
+   修改学生资料
+        设计学生业务逻辑接口（上面）
+        设计学生接口实现类（接口方法）（try - catch - finally）
+        设计学生Action动作（显示学生资料）
+        注册Struts2.xml
+        页面调用
